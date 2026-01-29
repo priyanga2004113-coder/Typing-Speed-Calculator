@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Typing Speed Test</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- PAGE 1  -->
+<div class="container" id="page1">
+  <div class="card page1-grid">
+    <div>
+      <h1>Typing Preview</h1>
+       <p>Welcome to the Typing Speed Test. Enter your name, select the date, and choose a difficulty level that matches your typing ability.</p>
+       <p>The timer starts automatically when you begin typing. Progress, accuracy, and speed are tracked in real time.</p>
+       <p>After completion, you can view your results and export them as a PDF.</p>
+    </div>
+    <div>
+      <h1 style="text-align:center">Take Your Typing Test</h1>
+      <input id="userName" placeholder="Enter Your Name">
+      <input type="date" id="testDate">
+      <select id="difficulty">
+        <option value="">Choose difficulty</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+        <option value="numbers" >Numbers Only</option>
+      </select>
+      <div style="text-align:center">
+        <button onclick="startTest()">Start Test</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- PAGE 2  -->
+<div class="container hidden" id="page2">
+  <div class="header">
+    <h1 id="heading">START YOUR TYPING TEST</h1>
+    <p id="timerText" >Time : 0s</p>
+  </div>
+
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div class="typing-container">
+    <div class="text-display" id="textDisplay"></div>
+    <textarea id="inputField" placeholder="Start typing..."></textarea>
+  </div>
+
+  <center><button id="resultBtn" class="hidden" onclick="showResult()" >Show Result</button></center>
+</div>
+
+<!-- PAGE 3  -->
+<div id="page3" class="hidden">
+  <div class="card output-card" id="resultCard">
+    <h2>Typing Test Result</h2>
+
+    <div class="output-item"><span>Name</span><span id="rName"></span></div>
+    <div class="output-item"><span>Date</span><span id="rDate"></span></div>
+    <div class="output-item"><span>Difficulty</span><span id="rDiff"></span></div>
+    <div class="output-item"><span>Time</span><span id="rTime"></span></div>
+    <div class="output-item"><span>WPM</span><span id="rWpm"></span></div>
+    <div class="output-item"><span>Accuracy</span><span id="rAccuracy"></span></div>
+
+    <div class="pdf-link" onclick="exportPDF()">Export Result as PDF</div><br>
+    <button onclick="location.reload()">Restart</button>
+  </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
