@@ -1,5 +1,4 @@
 # Typing-Speed-Calculator
-# Typing Speed Test Application
 
 A simple and responsive Typing Speed Test application built using HTML, CSS, and JavaScript.  
 This project helps users measure their typing speed and accuracy in a clean and user-friendly interface.
